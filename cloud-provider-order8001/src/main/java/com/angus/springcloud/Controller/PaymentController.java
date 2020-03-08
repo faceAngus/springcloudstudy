@@ -2,9 +2,10 @@ package com.angus.springcloud.Controller;
 
 import com.angus.springcloud.Service.PaymentService;
 import com.angus.springcloud.entity.CommonResult;
+
 import com.angus.springcloud.entity.Payment;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -20,7 +21,7 @@ public class PaymentController {
 	private PaymentService paymentService;
 
 	@PostMapping(value = "payment/create")
-	public CommonResult create(Payment payment){
+	public CommonResult create(@RequestBody Payment payment){
 		Payment result =paymentService.create(payment);
 		if(result !=  null){
 			return new CommonResult(200,"插入成功", result);

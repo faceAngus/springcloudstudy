@@ -10,6 +10,7 @@
     <modules>
       <module>cloud-consumer-order80</module>
       <module>cloud-provider-order8001</module>
+      <module>cloud-common</module>
     </modules>
     <packaging>pom</packaging>
 
